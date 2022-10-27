@@ -46,6 +46,9 @@ function generateRandomNumberForDistance() {
 }
 
 let myMargin = 0;
+let my_m = 0;
+let my_c= 0;
+
 function leftButtonClick() {
     console.log('Left button clicked');
 
@@ -79,12 +82,10 @@ function leftButtonClick() {
     currentTime = 0;
     endTime = 0;
     if(myPlot_X.length === 20){
-        //download_csv();
-        //open('plot.html', '_blank');
-
         select_exp.style.display = 'none';
         select_plot.style.display = "block";
         draw();
+        alert("b = " + my_m + "   " + 'a = ' + my_c);
     }
     counter++;
     select_counter.textContent= 'Times clicked ' + counter + ' of 20';
@@ -126,7 +127,6 @@ function draw() {
         showarrow: false
       }]});
 }
-
 function lineRegression(){
     let x_sum = 0;
     myPlot_X.forEach(element => {
@@ -139,7 +139,6 @@ function lineRegression(){
         y_sum += element;
     });
 
-    console.log(x_sum);
     let xmulty = 0;
     for(let i = 0; i < myPlot_X.length; i++){
         xmulty += myPlot_Y[i] * myPlot_X[i];
@@ -158,6 +157,10 @@ function lineRegression(){
     let m = ((myPlot_X.length * xmulty) - (x_sum * y_sum))/(myPlot_X.length * x_square - x_sum*x_sum);
     let c = (x_square * y_sum - x_sum * xmulty)/(myPlot_X.length * x_square - x_sum * x_sum);
     console.log(m);
+    console.log(c);
+    my_m = m;
+    my_c = c;
+    
     let mx = Math.max(...myPlot_X);
     let mn = Math.min(...myPlot_X);
     let values_y = [];

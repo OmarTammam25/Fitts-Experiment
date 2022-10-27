@@ -3,6 +3,7 @@ body {
     height: 100%;
     margin:0;
     justify-content: center;
+    justify-items: center;
 }
 html {
     height: 100%;
