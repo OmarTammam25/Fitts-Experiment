@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    height: 100%;
+    margin:0;
+    justify-content: center;
+}
+html {
+    height: 100%;
+}
+
+#left-button {
+    width: 25%;
+    padding: 0;
+    
+    background-color: green;
+}
+.header {
+    top: 50px;
+    align-items: flex-start;
+}
+
+#exp {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+#middle {
+    width: 25%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#middle-button {
+    width: 25%;
+    height: 10%;
+    background-color: red;
+}
+#right-button {
+    width: 25%;
+    padding: 0;
+    background-color: green;
+
+}
